@@ -3,7 +3,7 @@ from sqlalchemy import Column, Integer, Float, create_engine
 from sqlalchemy.ext.declarative import declarative_base #knihgovna pro práci s databází
 from sqlalchemy.orm import sessionmaker, Session
 from pydantic import BaseModel
-from typing import List
+from typing import List 
 
 # PŘEPÍNAČ: True = používá paměť, False = používá databázi
 USE_MEMORY = False
