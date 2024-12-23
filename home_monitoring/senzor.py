@@ -54,7 +54,7 @@ def add_data(sensor_data: SensorDataInput, db: Session = Depends(get_db if not U
         data_store.append(sensor_data)
         return {"message": "Data saved (memory)", "data": sensor_data}
     else:
-        # Uložení do databáze
+        # Uložení do databáze ->
         db_data = SensorData(temperature=sensor_data.temperature, humidity=sensor_data.humidity)
         db.add(db_data)
         db.commit()
