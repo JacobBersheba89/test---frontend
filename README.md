@@ -18,5 +18,5 @@ I plan to build a **home station** that **will collect information** from variou
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/username/home-station.git
+   git clone [https://github.com/username/home-station.git](https://github.com/JacobBersheba89/home_senzor)
 
