@@ -13,6 +13,7 @@ I plan to build a **home station** that **will collect information** from variou
 - **Arduino** for data collection.
 - **Python** for data processing and display.
 - **Graphical interface** for visualization.
+- **Lua** for programin RB motherboard
 
 ## Installation
 
