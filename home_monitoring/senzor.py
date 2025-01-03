@@ -11,7 +11,7 @@ USE_MEMORY = False
 
 # Model pro příchozí data
 class SensorDataInput(BaseModel):
-    temperature: float = Field(..., ge=-50.0, le=100.0, description="Teplota v rozsahu -50 až 100 °C")
+    temperature: float = Field(..., ge=0, le=80.0, description="Teplota v rozsahu 0 až 80 °C")
     humidity: float = Field(..., ge=0.0, le=100.0, description="Vlhkost v rozsahu 0 až 100 %")
     sensor_type: Optional[str] = Field("general", description="Typ senzoru")
 
@@ -21,6 +21,13 @@ class SensorDataInput(BaseModel):
         if value not in allowed_types:
             raise ValueError(f"sensor_type must be one of {allowed_types}")
         return value
+
+    @validator("humidity")
+    def validate_humidity_with_temperature(cls, humidity, values):
+        temperature = values.get("temperature")
+        if temperature and humidity < 10.0 and temperature > 50.0:
+            raise ValueError("Low humidity with high temperature is unlikely. Please verify the data.")
+        return humidity
 
 # Paměťové uložiště (pouze pokud není databáze)
 if USE_MEMORY:
@@ -108,6 +115,15 @@ def get_latest_data(db: Session = Depends(get_db if not USE_MEMORY else lambda: 
         if not data:
             return {"message": "No data available"}
         return {"data": data}
+
+@app.on_event("startup")
+def check_database_connection():
+    if not USE_MEMORY:
+        try:
+            with engine.connect() as connection:
+                connection.execute("SELECT 1")
+        except Exception as e:
+            raise RuntimeError(f"Database connection failed: {e}")
 
 # Volitelně: Kontrolní endpoint
 @app.get("/")
