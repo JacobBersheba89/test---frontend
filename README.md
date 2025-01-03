@@ -1,7 +1,4 @@
-// it will be very interesting and awesome if it will works out!
---my plan is to organize own home station, which will by c
-
-# Home Station for Data Collection
+# Home Station for Data Collection 💾
 
 I plan to build a **home station** that **will collect information** from various sensors, such as temperature, humidity, air quality, and more. The goal of this project is to **monitor** different environmental parameters and provide real-time user insights.
 
