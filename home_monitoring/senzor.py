@@ -11,7 +11,7 @@ USE_MEMORY = False
 
 # Model pro příchozí data
 class SensorDataInput(BaseModel):
-    temperature: float = Field(..., ge=0, le=80.0, description="Teplota v rozsahu 0 až 80 °C")
+    temperature: float = Field(..., ge=0, le=80.0, description="Teplota v rozsahu 0 až 85 °C")
     humidity: float = Field(..., ge=0.0, le=100.0, description="Vlhkost v rozsahu 0 až 100 %")
     sensor_type: Optional[str] = Field("general", description="Typ senzoru")
 
@@ -25,7 +25,7 @@ class SensorDataInput(BaseModel):
     @validator("humidity")
     def validate_humidity_with_temperature(cls, humidity, values):
         temperature = values.get("temperature")
-        if temperature and humidity < 10.0 and temperature > 50.0:
+        if temperature and humidity < 10.0 and temperature > 90.0:
             raise ValueError("Low humidity with high temperature is unlikely. Please verify the data.")
         return humidity
 
