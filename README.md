@@ -6,7 +6,7 @@ V zásadě mám v plánu vytvořit nejen monitorovací stanici, ale dnes mě nap
 <img src="https://github.com/user-attachments/assets/031ba99c-62b6-4383-8c8a-3e2dfd7cae24" alt="CoolFutureGIF" width="150"/>
 
 EN
-Basically, I plan to create not just a monitoring station, but today I had the idea that this station could also include CHAT GPT, specifically its voice module, along with all the capabilities that OpenAI offers. Through a simple API and a Python script, we could integrate, for example, the “SpeechRecognition” library together with TTS options like pyttsx3 or Google TTS. This setup could make the entire model work very effectively. Of course, further fine-tuning and improvements would follow.
+Basically, I plan to create not just a monitoring station, but today I had the idea that this station could also include CHAT GPT, specifically its voice module, along with all the capabilities that OpenAI offers. Through a simple API and a Python script, we could integrate, for example, the “SpeechRecognition” library together with TTS options like pyttsx3 or Google TTS. This setup could make the entire model work very effectively. Of course, further fine-tuning and improvements would follow.<br>
 <img src="https://github.com/user-attachments/assets/a5db893c-0ec9-42e4-8723-a2287f8c72d4" alt="CoolFutureGIF" width="150"/>
 
 
