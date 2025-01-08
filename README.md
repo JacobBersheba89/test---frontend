@@ -27,6 +27,7 @@ Basically, I plan to create not just a monitoring station, but today I had the i
 - **Python** for data processing and display.
 - **Graphical interface** for visualization.
 - **Lua** for programin RB motherboard
+- **API** I hope for anything
 
 ## Installation
 
