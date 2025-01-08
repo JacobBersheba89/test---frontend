@@ -19,7 +19,7 @@ Basically, I plan to create not just a monitoring station, but today I had the i
 - Collecting data from various sensors.
 - Displaying real-time data.
 - Data export and analysis options.
-- CHAT GPT - add voice module 
+- CHAT GPT - add voice module, like "Phone-a-friend" or _lifeline_
 
 ## Technologies
 
